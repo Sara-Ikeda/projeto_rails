@@ -1,0 +1,31 @@
+<%= form_with model: filme do | f | %>
+  <%= f.label 'Título:' %>
+  <%= f.text_field :titulo %>
+  <br />
+
+  <%= f.label 'Ano de Lançamento:' %>
+  <%# <%= select_year(Time.now.year, start_year: 1895, end_year: Time.now.year, field_name: :ano_lancamento) %>
+  <%= f.select :ano_lancamento, 1895..Time.now.year %>
+  <br />
+
+  <%= f.label 'Sinopse:' %>
+  <%= f.text_area :sinopse %>
+  <br />
+
+  <%= f.label 'País de Origem:' %>
+  <%= f.text_field :pais_origem %>
+  <br />
+
+  <%= f.label 'Duração' %>
+  <%= f.number_field :duracao, in: 0..200 %>min
+  <br />
+
+  <%= f.label 'Diretor:' %>
+  <%= f.collection_select :diretor_id, Diretor.all, :id, :nome %>
+  <br />
+
+  <%= f.label 'Gênero:' %>
+  <%= f.collection_select :genero_id, Genero.all, :id, :nome %>
+  <br />
+  <%= f.submit 'Salvar' %>
+<% end %>

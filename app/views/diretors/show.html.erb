@@ -1,0 +1,21 @@
+<div>
+  <h1>Informações sobre o Diretor: <%= @diretor.nome %></h1>
+
+  <strong>Nome: </strong><%= @diretor.nome  %><br />
+  <strong>Nacionalidade: </strong><%= @diretor.nacionalidade  %><br />
+  <strong>Data de Nascimento: </strong><%= @diretor.data_nasc  %><br />
+  <strong>Gênero Favorito: </strong><%= Genero.find(@diretor.genero_id).nome  %><br />
+
+  <%= link_to 'Editar', edit_diretor_path %>
+</div>
+
+<div>
+  <h3>Filmes:</h3>
+  <ul>
+    <% Filme.all.each do | filme | %>
+      <% if filme.diretor_id == @diretor.id %>
+        <li><%= filme.titulo %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

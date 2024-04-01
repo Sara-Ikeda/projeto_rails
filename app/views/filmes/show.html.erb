@@ -1,0 +1,13 @@
+<div>
+  <h1>Informações sobre o Filme: <%= @filme.titulo %></h1>
+
+  <strong>Titulo: </strong><%= @filme.titulo  %><br />
+  <strong>Ano de Lançamento: </strong><%= @filme.ano_lancamento  %><br />
+  <strong>Sinopse: </strong><%= @filme.sinopse  %><br />
+  <strong>País de Origem: </strong><%= @filme.pais_origem  %><br />
+  <strong>Duração: </strong><%= @filme.duracao  %>min<br />
+  <strong>Diretor: </strong><%= Diretor.find(@filme.diretor_id).nome  %><br />
+  <strong>Gênero: </strong><%= Genero.find(@filme.genero_id).nome  %><br />
+
+  <%= link_to 'Editar', edit_filme_path %>
+</div>

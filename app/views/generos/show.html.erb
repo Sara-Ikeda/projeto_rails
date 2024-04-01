@@ -1,0 +1,17 @@
+<div>
+  <h1>Informações sobre o Gênero: <%= @genero.nome %></h1>
+
+  <strong>Nome:</strong><%= @genero.nome  %><br />
+  <%= link_to 'Editar', edit_genero_path %><br />
+</div>
+
+<div>
+  <h3>Filmes:</h3>
+  <ul>
+    <% Filme.all.each do | filme | %>
+      <% if filme.genero_id == @genero.id %>
+        <li><%= filme.titulo %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

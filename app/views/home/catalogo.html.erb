@@ -1,0 +1,27 @@
+<div>
+  <h1>CATALÓGO DE FILMES</h1>
+</div>
+
+<div>
+  <h3>Filmes</h3>
+  <% @filmes.each do | filme | %>
+    <%= link_to filme.titulo, filme %> - <%= filme.ano_lancamento %>
+    <br />
+  <% end %>
+</div>
+
+<div>
+  <h3>Diretores</h3>
+  <% @diretores.each do | diretor | %>
+    <%= link_to diretor.nome, diretor %>
+    <br />
+  <% end %>
+</div>
+
+<div>
+  <h3>Gêneros</h3>
+  <% @generos.each do | genero | %>
+    <%= link_to genero.nome, genero %>
+    <br />
+  <% end %>
+</div>
