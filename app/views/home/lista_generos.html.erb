@@ -1,0 +1,7 @@
+<div>
+  <h2>Gêneros</h2>
+  <% @generos.each do | genero | %>
+    <%= link_to genero.nome, genero %>
+    <br />
+  <% end %>
+</div>

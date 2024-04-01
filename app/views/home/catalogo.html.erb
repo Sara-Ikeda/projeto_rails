@@ -3,25 +3,7 @@
 </div>
 
 <div>
-  <h3>Filmes</h3>
-  <% @filmes.each do | filme | %>
-    <%= link_to filme.titulo, filme %> - <%= filme.ano_lancamento %>
-    <br />
-  <% end %>
-</div>
-
-<div>
-  <h3>Diretores</h3>
-  <% @diretores.each do | diretor | %>
-    <%= link_to diretor.nome, diretor %>
-    <br />
-  <% end %>
-</div>
-
-<div>
-  <h3>Gêneros</h3>
-  <% @generos.each do | genero | %>
-    <%= link_to genero.nome, genero %>
-    <br />
-  <% end %>
+  <h3><%= link_to 'Lista de Filmes', lista_filmes_path %></h3>
+  <h3><%= link_to 'Lista de Diretores', lista_diretors_path %></h3>
+  <h3><%= link_to 'Lista de Gêneros', lista_generos_path %></h3>
 </div>
